@@ -32,7 +32,7 @@ class ProductController extends Controller
         Products::create($request->all());
 
         return redirect()->route('products.index')
-                         ->with('success', 'Product creado.');
+                         ->with('success', 'Producto creado.');
     }
 
     public function show(Products $product)

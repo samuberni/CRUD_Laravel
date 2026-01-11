@@ -4,10 +4,12 @@
 
 @section('content')
 
-    @if ($mesages = Session::get('success'))
-        <div class="alert alert-success" role="alert">
+    @if ($messages = Session::get('success'))
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
             {{ $messages }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
+
     @endif
 
     <!-- Rounded with Label -->

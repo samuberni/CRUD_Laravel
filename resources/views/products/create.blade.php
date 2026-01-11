@@ -5,13 +5,28 @@
 @section('content')
 
     @if ($errors->any())
-        <div>
-            <strong>¡Ups! Hay algunos problemas con los datos ingresados.</strong><br><br>
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
+        <!-- Danger Alert -->
+        <div class="alert alert-danger alert-dismissible alert-additional fade show" role="alert">
+            <div class="alert-body">
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                <div class="d-flex">
+                    <div class="shrink me-3">
+                        <i class="ri-error-warning-line fs-16 align-middle"></i>
+                    </div>
+                    <div class="grow">
+                        <h5 class="alert-heading">¡Ups!</h5>
+                        <p class="mb-0">Hay algunos problemas con los datos ingresados.</p>
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="alert-content">
+                <p class="mb-0">Por favor, corrígelos e intenta nuevamente.</p>
+            </div>
         </div>
     @endif
 
